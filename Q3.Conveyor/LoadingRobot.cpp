@@ -30,5 +30,5 @@ LoadingRobot::~LoadingRobot()
 //Let the robot load items onto the conveyor
 void LoadingRobot::AddItems()
 {
-    _Conveyor->AddItems( rand() % 10 );
+    _Conveyor->AddItems(rand() % 10);
 }

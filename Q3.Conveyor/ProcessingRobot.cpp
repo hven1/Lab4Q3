@@ -36,18 +36,18 @@ ProcessingRobot::~ProcessingRobot()
 // First arm of Processing Robot
 void ProcessingRobot::ProcessItems()
 {
-  int CurrentNumItemsOnConveyor = _Conveyor->GetItemsConv();
+  int CurrNumOnConv = _Conveyor->GetItemsConv();
 
   //Check if there is items available to process
-  if(CurrentNumItemsOnConveyor > 0)
+  if(CurrNumOnConv > 0)
   {
     //Calculate current number of items processed
-    if( CurrentNumItemsOnConveyor>=_MaxProssArm1 )
+    if( CurrNumOnConv>=_MaxProssArm1 )
     {
       _CurProssArm1= _MaxProssArm1;
     }
     else{
-      _CurProssArm1 =CurrentNumItemsOnConveyor;
+      _CurProssArm1 = CurrNumOnConv;
     }
 
     //Process Items

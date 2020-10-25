@@ -14,9 +14,12 @@
 #include "ProcessingRobot.h"
 #include "ProcessingRobot2nd.h"
 #include "OverflowBin.h"
+#include <time.h>
 
 int main()
 {
+  std::srand(time(0));
+
   //Construct all items required for program
   Conveyor* myConveyor = new Conveyor();
   LoadingRobot* myLoader = new LoadingRobot(myConveyor);

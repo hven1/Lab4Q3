@@ -25,7 +25,7 @@ Conveyor::~Conveyor()
 
 //---------------------------------------------------------------
 //Add items to Conveyor
-void Conveyor::AddItems( int n )
+void Conveyor::AddItems(int n)
 {
     _NumOnConv += n;
 

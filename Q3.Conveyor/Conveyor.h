@@ -16,17 +16,17 @@ class Conveyor
     public:
       Conveyor();
       ~Conveyor();
-      void AddItems( int n );
-      void RemoveItems( int n );
+      void AddItems(int n);
+      void RemoveItems(int n);
       void Report();
-      int GetItemsConv( )
+      int GetItemsConv()
       {
         return _NumOnConv;
       }
 
     private:
       int _NumOnConv;
-      const int _MaxOnConv =75;
+      const int _MaxOnConv = 75;
 };
 
 #endif //_CONVEYOR_H

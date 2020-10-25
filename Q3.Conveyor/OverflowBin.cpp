@@ -38,10 +38,10 @@ OverflowBin::~OverflowBin()
 //This overflowbin function adds or removes items from the conveyor
 void OverflowBin::OverflowItemAddRemove()
 {
-  int CurrentNumItemsOnConveyor = _Conveyor->GetItemsConv();
+  int CurrNumOnConv = _Conveyor->GetItemsConv();
 
   //Remove itsms if the conveyor is overloaded
-  if ( CurrentNumItemsOnConveyor > 50 )
+  if ( CurrNumOnConv > 50 )
   {
     _Conveyor->RemoveItems( _OverflowAddRemoveRate);
     _NumInOflowBin = _NumInOflowBin + _OverflowAddRemoveRate;
@@ -50,7 +50,7 @@ void OverflowBin::OverflowItemAddRemove()
 
   //Add items if their is enough spacew on the conveyor and items
   //available in the bin
-  else if( (CurrentNumItemsOnConveyor < 10) && (_NumInOflowBin>0) ) {
+  else if( (CurrNumOnConv < 10) && (_NumInOflowBin>0) ) {
     _Conveyor->AddItems( _OverflowAddRemoveRate);
     _NumInOflowBin = _NumInOflowBin - _OverflowAddRemoveRate;
 

@@ -35,21 +35,21 @@ ProcessingRobot2nd::~ProcessingRobot2nd()
 //Second arm of Processing Robot
 void ProcessingRobot2nd::ProcessItems( )
 {
-  int CurrentNumItemsOnConveyor = _Conveyor->GetItemsConv();
+  int CurrNumOnConv = _Conveyor->GetItemsConv();
   //Check if there is items available to process
-  if(CurrentNumItemsOnConveyor > 0)
+  if(CurrNumOnConv > 0)
   {
     //Calculate current number of items processed
-    if( CurrentNumItemsOnConveyor >= _MaxProssArm2 )
+    if( CurrNumOnConv >= _MaxProssArm2 )
     {
       _CurProssArm2 = _MaxProssArm2;
     }
     else{
-      _CurProssArm2 = CurrentNumItemsOnConveyor;
+      _CurProssArm2 = CurrNumOnConv;
     }
 
     //Process Items
-    _Conveyor->RemoveItems( _MaxProssArm2 );
+    _Conveyor->RemoveItems(_MaxProssArm2);
 
     //Report on items just processed
     std::cout << "Items processed Arm 2: " << _CurProssArm2 << std::endl;
