@@ -10,7 +10,6 @@
 #include "ProcessingRobot.h"
 #include "LoadingRobot.h"
 
-
 //-------------------------------------------------------------------
 // Acts as a buffer in the case of heavy utlisation of conveyor
 class OverflowBin

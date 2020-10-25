@@ -9,7 +9,6 @@
 
 #include "Conveyor.h"
 
-
 //-------------------------------------------------------------------
 // Simulate a loading robot that places items on a conveyor belt.
 // Note that Init sets a pointer to the conveyor the robot will load.

@@ -21,7 +21,6 @@ Conveyor::Conveyor(): _NumOnConv(0)
 Conveyor::~Conveyor()
 {
   std::cout << "[Conveyor DTor] " << std::endl;
-
 }
 
 //---------------------------------------------------------------
@@ -34,7 +33,7 @@ void Conveyor::AddItems( int n )
     if (_NumOnConv > _MaxOnConv)
     {
       std::cout << "Conveyor Overload by " << _NumOnConv
-      << " items on the conveyor - Max Allowed " << _MaxOnConv <<std::endl;
+        << " items on the conveyor - Max Allowed " << _MaxOnConv <<std::endl;
       exit(0);
     }
 }
