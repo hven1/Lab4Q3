@@ -24,7 +24,8 @@ int main()
     ProcessingRobot2nd* myProcessor2nd = new ProcessingRobot2nd(myConveyor);
     OverflowBin* myOverflowBin = new OverflowBin(myConveyor);
 
-   while(1)
+   //while(1)
+   for(int i=0; i<2; i++)
     {
         myLoader->AddItems();
         myConveyor->Report();

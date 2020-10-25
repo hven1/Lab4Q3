@@ -42,12 +42,12 @@ void ProcessingRobot2nd::ProcessItems( )
   if(CurrentNumItemsOnConveyor > 0)
   {
     //Calculate current number of items processed
-    if( CurrentNumItemsOnConveyor>=_MaxNumItemsProcessedArm2 )
+    if( CurrentNumItemsOnConveyor >= _MaxNumItemsProcessedArm2 )
     {
-      _CurrentNumItemsProcessedArm2= _MaxNumItemsProcessedArm2;
+      _CurrentNumItemsProcessedArm2 = _MaxNumItemsProcessedArm2;
     }
     else{
-      _CurrentNumItemsProcessedArm2 =CurrentNumItemsOnConveyor;
+      _CurrentNumItemsProcessedArm2 = CurrentNumItemsOnConveyor;
     }
 
     //Process Items
@@ -61,19 +61,12 @@ void ProcessingRobot2nd::ProcessItems( )
 //---------------------------------------------------------------
 void ProcessingRobot2nd::Report()
 {
-    int CurrentNumItemsOnConveyor = _Conveyor->GetNumOfItemsOnConveyor();
-
-    //Recalculate average if their was items processed
-    if(CurrentNumItemsOnConveyor>0)
-    {
-      //Calculate  and report stats for reporting: Arm 2
-      _TotalNumItemsProcessedArm2 = _TotalNumItemsProcessedArm2 + _CurrentNumItemsProcessedArm2;
-      _RunAverageNumItemsProcessedArm2 = (_TotalNumItemsProcessedArm2/_NumProcessingIterationsArm2*100)/_MaxNumItemsProcessedArm2;
-
-      std::cout << "Total items processed Arm 2: " << _TotalNumItemsProcessedArm2 << std::endl;
-    }
+    //Calculate  and report stats for reporting: Arm 2
+    _TotalNumItemsProcessedArm2 = _TotalNumItemsProcessedArm2 + _CurrentNumItemsProcessedArm2;
+    std::cout << "Total items processed Arm 2: " << _TotalNumItemsProcessedArm2 << std::endl;
 
     //Report utilisation stats
-    std::cout << "Average utilisation of processing robot Arm 2: " << _RunAverageNumItemsProcessedArm2 << std::setprecision(4) << "%" << std::endl;
+    _RunAverageNumItemsProcessedArm2 = (_TotalNumItemsProcessedArm2/_NumProcessingIterationsArm2*100)/_MaxNumItemsProcessedArm2;
+    std::cout << "Average utilisation of processing robot Arm 2: " << std::setprecision(4)<< _RunAverageNumItemsProcessedArm2 << "%" << std::endl;
     _NumProcessingIterationsArm2++;
 }

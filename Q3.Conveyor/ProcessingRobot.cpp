@@ -63,17 +63,12 @@ void ProcessingRobot::ProcessItems()
 //---------------------------------------------------------------
 void ProcessingRobot::Report()
 {
-    int CurrentNumItemsOnConveyor = _Conveyor->GetNumOfItemsOnConveyor();
-    //Recalculate average if their was items processed
-    if(CurrentNumItemsOnConveyor>0)
-    {
-      //Calculate and report stats for reporting: Arm 1
-      _TotalNumItemsProcessedArm1 = _TotalNumItemsProcessedArm1 + _CurrentNumItemsProcessedArm1;
-      _RunAverageNumItemsProcessedArm1 = (_TotalNumItemsProcessedArm1/_NumProcessingIterationsArm1*100)/_MaxNumItemsProcessedArm1;
-
-      std::cout << "Total items processed Arm 1: " << _TotalNumItemsProcessedArm1 << std::endl;
-    }
+    //Calculate and report stats for reporting: Arm 1
+    _TotalNumItemsProcessedArm1 += _CurrentNumItemsProcessedArm1;
+    std::cout << "Total items processed Arm 1: " << std::setprecision(4) << _TotalNumItemsProcessedArm1 << std::endl;
 
     //Report utilisation stats
-    std::cout << "Average utilisation of processing robot Arm 1: " << _RunAverageNumItemsProcessedArm1 << std::setprecision(4) <<"%" << std::endl;
+    _RunAverageNumItemsProcessedArm1 = (_TotalNumItemsProcessedArm1/_NumProcessingIterationsArm1*100)/_MaxNumItemsProcessedArm1;
+    std::cout << "Average utilisation of processing robot Arm 1: " << std::setprecision(3) << _RunAverageNumItemsProcessedArm1 <<"%" << std::endl;
+    _NumProcessingIterationsArm1++;
 }

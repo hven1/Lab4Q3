@@ -25,14 +25,14 @@ OverflowBin::OverflowBin(Conveyor* WhichConveyor)
   _NumItemsOverflowBin = 0;
   _RecordedMaxOverflowBin = 0;
 
-  std::cout << "[OverflowBin CTor] " << std::endl;
+  std::cout << "[OverflowBin CTor] \n" << std::endl;
 }
 
 //---------------------------------------------------------------
 //Destruct Conveyor
 OverflowBin::~OverflowBin()
 {
-  std::cout << "[Conveyor DTor] " << std::endl;
+  std::cout << "[OverflowBin DTor] " << std::endl;
 }
 
 //---------------------------------------------------------------
