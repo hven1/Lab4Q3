@@ -44,7 +44,6 @@ void Conveyor::RemoveItems( int n )
 {
     // Note that we cannot have a negative number of items on belt
     _NumItemsOnConveyor = std::max(0, _NumItemsOnConveyor-n);
-
 }
 
 //---------------------------------------------------------------

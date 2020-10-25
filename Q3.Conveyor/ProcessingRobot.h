@@ -30,4 +30,4 @@ class ProcessingRobot
       double _NumProcessingIterationsArm1;
 };
 
-#endif
+#endif //_PROCESSINGROBOT_H

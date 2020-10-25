@@ -27,5 +27,4 @@ class OverflowBin
       int _RecordedMaxOverflowBin;
 };
 
-
-#endif
+#endif //_OVERFLOWBIN_H

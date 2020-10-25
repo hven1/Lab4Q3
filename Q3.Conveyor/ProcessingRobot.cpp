@@ -4,12 +4,13 @@
 // Initial revision: Donald G Dansereau
 // Completed by: Hendrik Venter
 
+#include "ProcessingRobot.h"
+
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>      // rand
 #include <algorithm>    // std::max
 #include <math.h>
-#include "ProcessingRobot.h"
 
 //---------------------------------------------------------------
 //Initialises Conveyor
@@ -23,7 +24,6 @@ ProcessingRobot::ProcessingRobot(Conveyor* WhichConveyor)
   _RunAverageNumItemsProcessedArm1 = 0;
 
   std::cout << "[ProcessingRobot 1 CTor] " << std::endl;
-
 }
 
 //---------------------------------------------------------------
@@ -31,7 +31,6 @@ ProcessingRobot::ProcessingRobot(Conveyor* WhichConveyor)
 ProcessingRobot::~ProcessingRobot()
 {
   std::cout << "[ProcessingRobot 1 DTor] " << std::endl;
-
 }
 
 //---------------------------------------------------------------

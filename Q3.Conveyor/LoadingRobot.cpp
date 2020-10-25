@@ -4,7 +4,6 @@
 // Initial revision: Donald G Dansereau, 2019
 // Completed by: Hendrik Venter
 
-
 #include <stdlib.h>
 #include <iostream>
 #include <algorithm>

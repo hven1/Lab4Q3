@@ -15,7 +15,6 @@
 #include "ProcessingRobot2nd.h"
 #include "OverflowBin.h"
 
-
 int main()
 {
     Conveyor* myConveyor = new Conveyor();

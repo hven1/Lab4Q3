@@ -4,19 +4,19 @@
 // Initial revision: Donald G Dansereau
 // Completed by: Hendrik Venter
 
+#include "ProcessingRobot2nd.h"
+
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>      // rand
 #include <algorithm>    // std::max
 #include <math.h>
-#include "ProcessingRobot2nd.h"
 
 //---------------------------------------------------------------
 //Initialises Conveyor
 ProcessingRobot2nd::ProcessingRobot2nd(Conveyor* WhichConveyor)
 {
   _Conveyor = WhichConveyor;
-
   _MaxNumItemsProcessedArm2 = 1;
   _TotalNumItemsProcessedArm2 = 0;
   _NumProcessingIterationsArm2 = 1;
@@ -30,7 +30,6 @@ ProcessingRobot2nd::ProcessingRobot2nd(Conveyor* WhichConveyor)
 ProcessingRobot2nd::~ProcessingRobot2nd()
 {
   std::cout << "[ProcessingRobot 2 DTor] " << std::endl;
-
 }
 
 //---------------------------------------------------------------

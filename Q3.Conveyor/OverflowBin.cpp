@@ -61,7 +61,6 @@ void OverflowBin::OverflowItemAddRemove()
   {
     _RecordedMaxOverflowBin = _NumItemsOverflowBin;
   }
-
 }
 
 

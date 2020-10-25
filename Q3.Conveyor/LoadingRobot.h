@@ -4,7 +4,7 @@
 // Initial revision: Donald G Dansereau, 2019
 // Completed by: Hendrik Venter
 
-#ifndef _LOADINGROBOT_H
+#ifndef _CONVEYOR_H
 #define _LOADINGROBOT_H
 
 #include "Conveyor.h"
@@ -25,4 +25,4 @@ class LoadingRobot
         Conveyor* _Conveyor;
 };
 
-#endif
+#endif //_CONVEYOR_H

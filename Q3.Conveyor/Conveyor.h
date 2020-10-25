@@ -16,11 +16,9 @@ class Conveyor
     public:
       Conveyor();
       ~Conveyor();
-
       void AddItems( int n );
       void RemoveItems( int n );
       void Report();
-
       int GetNumOfItemsOnConveyor( )
       {
         return _NumItemsOnConveyor;
@@ -31,6 +29,4 @@ class Conveyor
       int _MaxNumItemsOnConveyor;
 };
 
-
-
-#endif
+#endif //_CONVEYOR_H
