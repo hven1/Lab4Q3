@@ -23,8 +23,8 @@ class OverflowBin
     private:
       Conveyor* _Conveyor;
       const int _OverflowAddRemoveRate = 1;
-      int _NumItemsOverflowBin;
-      int _RecordedMaxOverflowBin;
+      int _NumInOflowBin;
+      int _RecMaxOflowBin;
 };
 
 #endif //_OVERFLOWBIN_H

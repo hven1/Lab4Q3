@@ -21,8 +21,8 @@ OverflowBin::OverflowBin(Conveyor* WhichConveyor)
 {
   _Conveyor = WhichConveyor;
 
-  _NumItemsOverflowBin = 0;
-  _RecordedMaxOverflowBin = 0;
+  _NumInOflowBin = 0;
+  _RecMaxOflowBin = 0;
 
   std::cout << "[OverflowBin CTor] \n" << std::endl;
 }
@@ -38,27 +38,27 @@ OverflowBin::~OverflowBin()
 //This overflowbin function adds or removes items from the conveyor
 void OverflowBin::OverflowItemAddRemove()
 {
-  int CurrentNumItemsOnConveyor = _Conveyor->GetNumOfItemsOnConveyor();
+  int CurrentNumItemsOnConveyor = _Conveyor->GetItemsConv();
 
   //Remove itsms if the conveyor is overloaded
   if ( CurrentNumItemsOnConveyor > 50 )
   {
     _Conveyor->RemoveItems( _OverflowAddRemoveRate);
-    _NumItemsOverflowBin = _NumItemsOverflowBin + _OverflowAddRemoveRate;
+    _NumInOflowBin = _NumInOflowBin + _OverflowAddRemoveRate;
 
   }
 
   //Add items if their is enough spacew on the conveyor and items available in the bin
-  else if( (CurrentNumItemsOnConveyor < 10) && (_NumItemsOverflowBin>0) ) {
+  else if( (CurrentNumItemsOnConveyor < 10) && (_NumInOflowBin>0) ) {
     _Conveyor->AddItems( _OverflowAddRemoveRate);
-    _NumItemsOverflowBin = _NumItemsOverflowBin - _OverflowAddRemoveRate;
+    _NumInOflowBin = _NumInOflowBin - _OverflowAddRemoveRate;
 
   }
 
   //Record the max amount of items in the present bin
-  else if(_NumItemsOverflowBin > _RecordedMaxOverflowBin)
+  else if(_NumInOflowBin > _RecMaxOflowBin)
   {
-    _RecordedMaxOverflowBin = _NumItemsOverflowBin;
+    _RecMaxOflowBin = _NumInOflowBin;
   }
 }
 
@@ -67,6 +67,6 @@ void OverflowBin::OverflowItemAddRemove()
 //Report the overflow bin statistics
 void OverflowBin::Report()
 {
-    std::cout << "Items in OverflowBin: " << _NumItemsOverflowBin << std::endl;
-    std::cout << "Recorded max items in OverflowBin: " << _RecordedMaxOverflowBin << "\n" << std::endl;
+    std::cout << "Items in OverflowBin: " << _NumInOflowBin << std::endl;
+    std::cout << "Recorded max items in OverflowBin: " << _RecMaxOflowBin << "\n" << std::endl;
 }

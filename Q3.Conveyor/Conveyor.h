@@ -19,14 +19,14 @@ class Conveyor
       void AddItems( int n );
       void RemoveItems( int n );
       void Report();
-      int GetNumOfItemsOnConveyor( )
+      int GetItemsConv( )
       {
-        return _NumItemsOnConveyor;
+        return _NumOnConv;
       }
 
     private:
-      int _NumItemsOnConveyor;
-      const int _MaxNumItemsOnConveyor =75;
+      int _NumOnConv;
+      const int _MaxOnConv =75;
 };
 
 #endif //_CONVEYOR_H

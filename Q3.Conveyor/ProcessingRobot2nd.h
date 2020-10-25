@@ -23,11 +23,11 @@ class ProcessingRobot2nd
 
     private:
       Conveyor* _Conveyor;
-      const double _MaxNumItemsProcessedArm2 = 1;
-      double _CurrentNumItemsProcessedArm2;
-      double _TotalNumItemsProcessedArm2;
-      double _RunAverageNumItemsProcessedArm2;
-      double _NumProcessingIterationsArm2;
+      const double _MaxProssArm2 = 1;
+      double _CurProssArm2;
+      double _TotProssArm2;
+      double _AvgProssArm2;
+      double _ProssItersArm2;
 };
 
 #endif //_PROCESSINGROBOT2ND_H

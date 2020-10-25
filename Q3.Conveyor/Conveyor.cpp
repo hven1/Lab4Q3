@@ -11,7 +11,7 @@
 
 //---------------------------------------------------------------
 //Initialises Conveyor
-Conveyor::Conveyor(): _NumItemsOnConveyor(0)
+Conveyor::Conveyor(): _NumOnConv(0)
 {
   std::cout << "[Conveyor CTor] " << std::endl;
 }
@@ -28,12 +28,12 @@ Conveyor::~Conveyor()
 //Add items to Conveyor
 void Conveyor::AddItems( int n )
 {
-    _NumItemsOnConveyor += n;
+    _NumOnConv += n;
 
     //Report overflow if conveyor exceeds max capacity
-    if (_NumItemsOnConveyor > _MaxNumItemsOnConveyor)
+    if (_NumOnConv > _MaxOnConv)
     {
-      std::cout << "Conveyor Overload by " << _NumItemsOnConveyor << " items on the conveyor - Max Allowed " << _MaxNumItemsOnConveyor <<std::endl;
+      std::cout << "Conveyor Overload by " << _NumOnConv << " items on the conveyor - Max Allowed " << _MaxOnConv <<std::endl;
       exit(0);
     }
 }
@@ -43,12 +43,12 @@ void Conveyor::AddItems( int n )
 void Conveyor::RemoveItems( int n )
 {
     // Note that we cannot have a negative number of items on belt
-    _NumItemsOnConveyor = std::max(0, _NumItemsOnConveyor-n);
+    _NumOnConv = std::max(0, _NumOnConv-n);
 }
 
 //---------------------------------------------------------------
 //Report the amount of items on conveyor
 void Conveyor::Report()
 {
-    std::cout << "Items on conveyor: " << _NumItemsOnConveyor << std::endl;
+    std::cout << "Items on conveyor: " << _NumOnConv << std::endl;
 }
