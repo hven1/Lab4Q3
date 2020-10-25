@@ -10,6 +10,12 @@
 #include "ProcessingRobot.h"
 #include "LoadingRobot.h"
 
+#include <stdlib.h>      // rand
+#include <iostream>
+#include <algorithm>    // std::max
+#include <math.h>
+#include <cassert>
+
 //-------------------------------------------------------------------
 // Acts as a buffer in the case of heavy utlisation of conveyor
 class OverflowBin

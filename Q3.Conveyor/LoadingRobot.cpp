@@ -4,18 +4,15 @@
 // Initial revision: Donald G Dansereau, 2019
 // Completed by: Hendrik Venter
 
-#include <stdlib.h>
-#include <iostream>
-#include <algorithm>
-
 #include "LoadingRobot.h"
-#include "Conveyor.h"
 
 //---------------------------------------------------------------
 //Initialises Conveyor
 LoadingRobot::LoadingRobot(Conveyor* WhichConveyor)
 {
+  assert(WhichConveyor != NULL);
   _Conveyor = WhichConveyor;
+
   std::cout << "[LoadingRobot CTor] " << std::endl;
 }
 

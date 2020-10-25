@@ -7,6 +7,10 @@
 #ifndef _CONVEYOR_H
 #define _CONVEYOR_H
 
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+
 //---------------------------------------------------------------
 // Simulate a conveyor belt. This version just counts how many
 // objects are on the belt, and accepts requests to add and remove

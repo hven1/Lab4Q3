@@ -10,6 +10,13 @@
 #include "Conveyor.h"
 #include "LoadingRobot.h"
 
+#include <iostream>
+#include <iomanip>
+#include <cstdlib>      // rand
+#include <algorithm>    // std::max
+#include <math.h>
+#include <cassert>
+
 //-------------------------------------------------------------------
 // Simulate a processing robot that removes items from a conveyor belt.
 // Note that Init sets a pointer to the conveyor the robot will use.

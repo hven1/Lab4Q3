@@ -6,17 +6,13 @@
 
 #include "ProcessingRobot2nd.h"
 
-#include <iostream>
-#include <iomanip>
-#include <cstdlib>      // rand
-#include <algorithm>    // std::max
-#include <math.h>
-
 //---------------------------------------------------------------
 //Initialises Conveyor
 ProcessingRobot2nd::ProcessingRobot2nd(Conveyor* WhichConveyor)
 {
+  assert(WhichConveyor != NULL);
   _Conveyor = WhichConveyor;
+
   _TotProssArm2 = 0;
   _ProssItersArm2 = 1;
   _AvgProssArm2 = 0;
@@ -36,6 +32,7 @@ ProcessingRobot2nd::~ProcessingRobot2nd()
 void ProcessingRobot2nd::ProcessItems( )
 {
   int CurrNumOnConv = _Conveyor->GetItemsConv();
+  assert(CurrNumOnConv >=0);
   //Check if there is items available to process
   if(CurrNumOnConv > 0)
   {

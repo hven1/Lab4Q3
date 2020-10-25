@@ -3,22 +3,13 @@
 // Implementation file for a overflow bin that adds and removes items from the conveyor to avoid overloading.
 // Completed by: Hendrik Venter
 
-
-#include <stdlib.h>      // rand
-#include <iostream>
-#include <algorithm>    // std::max
-#include <math.h>
-
 #include "OverflowBin.h"
-
-#include "Conveyor.h"
-#include "ProcessingRobot.h"
-#include "LoadingRobot.h"
 
 //---------------------------------------------------------------
 //Initialises Conveyor
 OverflowBin::OverflowBin(Conveyor* WhichConveyor)
 {
+  assert(WhichConveyor != NULL);
   _Conveyor = WhichConveyor;
 
   _NumInOflowBin = 0;
@@ -39,6 +30,7 @@ OverflowBin::~OverflowBin()
 void OverflowBin::OverflowItemAddRemove()
 {
   int CurrNumOnConv = _Conveyor->GetItemsConv();
+  assert(CurrNumOnConv >=0);
 
   //Remove itsms if the conveyor is overloaded
   if ( CurrNumOnConv > 50 )
@@ -50,7 +42,7 @@ void OverflowBin::OverflowItemAddRemove()
 
   //Add items if their is enough spacew on the conveyor and items
   //available in the bin
-  else if( (CurrNumOnConv < 10) && (_NumInOflowBin>0) ) {
+  else if( (CurrNumOnConv < 10) && (_NumInOflowBin > 0) ) {
     _Conveyor->AddItems(_OverflowAddRemoveRate);
     _NumInOflowBin = _NumInOflowBin - _OverflowAddRemoveRate;
 

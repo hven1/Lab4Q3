@@ -3,17 +3,16 @@
 // Main file for simulated conveyor belt
 // Initial revision: Donald G Dansereau, 2019
 // Completed by: Hendrik Venter
-
-#include <iostream>
-#include <cstdlib>      // rand
-#include <algorithm>    // std::max
-#include <memory>
-
 #include "Conveyor.h"
 #include "LoadingRobot.h"
 #include "ProcessingRobot.h"
 #include "ProcessingRobot2nd.h"
 #include "OverflowBin.h"
+
+#include <iostream>
+#include <cstdlib>      // rand
+#include <algorithm>    // std::max
+#include <memory>
 #include <time.h>
 
 int main()
@@ -34,9 +33,9 @@ int main()
       myLoader->AddItems();
       myConveyor->Report();
 
-      myProcessor->ProcessItems( );
+      myProcessor->ProcessItems();
       myConveyor->Report();
-      myProcessor->Report( );
+      myProcessor->Report();
 
       myProcessor2nd->ProcessItems();
       myConveyor->Report();

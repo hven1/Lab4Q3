@@ -9,6 +9,11 @@
 
 #include "Conveyor.h"
 
+#include <stdlib.h>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+
 //-------------------------------------------------------------------
 // Simulate a loading robot that places items on a conveyor belt.
 // Note that Init sets a pointer to the conveyor the robot will load.
