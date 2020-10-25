@@ -15,17 +15,24 @@
 #include "ProcessingRobot.h"
 #include "LoadingRobot.h"
 
+//---------------------------------------------------------------
+//Initialises Conveyor
+OverflowBin::OverflowBin(Conveyor* WhichConveyor)
+{
+  _Conveyor = WhichConveyor;
+
+  _OverflowAddRemoveRate = 1;
+  _NumItemsOverflowBin = 0;
+  _RecordedMaxOverflowBin = 0;
+
+  std::cout << "[OverflowBin CTor] " << std::endl;
+}
 
 //---------------------------------------------------------------
-//Initialise the overflow bin
-void OverflowBin::Init(Conveyor* WhichConveyor, LoadingRobot* WhichLoadingRobot)
+//Destruct Conveyor
+OverflowBin::~OverflowBin()
 {
-    _Conveyor = WhichConveyor;
-    _LoadingRobot = WhichLoadingRobot;
-
-    _OverflowAddRemoveRate = 1;
-    _NumItemsOverflowBin = 0;
-    _RecordedMaxOverflowBin = 0;
+  std::cout << "[Conveyor DTor] " << std::endl;
 }
 
 //---------------------------------------------------------------

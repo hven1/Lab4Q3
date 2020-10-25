@@ -11,10 +11,17 @@
 
 //---------------------------------------------------------------
 //Initialises Conveyor
-void Conveyor::Init()
+Conveyor::Conveyor(): _NumItemsOnConveyor(0), _MaxNumItemsOnConveyor(75)
 {
-    _NumItemsOnConveyor = 0;
-    _MaxNumItemsOnConveyor = 75;
+  std::cout << "[Conveyor CTor] " << std::endl;
+}
+
+//---------------------------------------------------------------
+//Destruct Conveyor
+Conveyor::~Conveyor()
+{
+  std::cout << "[Conveyor DTor] " << std::endl;
+
 }
 
 //---------------------------------------------------------------

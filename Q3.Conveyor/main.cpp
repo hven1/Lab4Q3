@@ -7,6 +7,7 @@
 #include <iostream>
 #include <cstdlib>      // rand
 #include <algorithm>    // std::max
+#include <memory>
 
 #include "Conveyor.h"
 #include "LoadingRobot.h"
@@ -17,33 +18,32 @@
 
 int main()
 {
-    //std::shared_ptr<Speaker>(new EnglishSpeaker())
-    Conveyor myConveyor;
-    LoadingRobot myLoader;
-    ProcessingRobot myProcessor;
-    ProcessingRobot2nd myProcessor2nd;
-    OverflowBin myOverflowBin;
-
-    myConveyor.Init();
-    myLoader.Init( &myConveyor );
-    myProcessor.Init(&myConveyor, &myLoader);
-    myProcessor2nd.Init(&myConveyor, &myLoader);
-    myOverflowBin.Init(&myConveyor, &myLoader);
+    Conveyor* myConveyor = new Conveyor();
+    LoadingRobot* myLoader = new LoadingRobot(myConveyor);
+    ProcessingRobot* myProcessor = new ProcessingRobot(myConveyor);
+    ProcessingRobot2nd* myProcessor2nd = new ProcessingRobot2nd(myConveyor);
+    OverflowBin* myOverflowBin = new OverflowBin(myConveyor);
 
    while(1)
     {
-        myLoader.AddItems();
-        myConveyor.Report();
+        myLoader->AddItems();
+        myConveyor->Report();
 
-        myProcessor.ProcessItems( );
-        myConveyor.Report();
-        myProcessor.Report( );
+        myProcessor->ProcessItems( );
+        myConveyor->Report();
+        myProcessor->Report( );
 
-        myProcessor2nd.ProcessItems();
-        myConveyor.Report();
-        myProcessor2nd.Report();
+        myProcessor2nd->ProcessItems();
+        myConveyor->Report();
+        myProcessor2nd->Report();
 
-        myOverflowBin.OverflowItemAddRemove();
-        myOverflowBin.Report();
+        myOverflowBin->OverflowItemAddRemove();
+        myOverflowBin->Report();
     }
+
+    delete myConveyor;
+    delete myLoader;
+    delete myProcessor;
+    delete myProcessor2nd;
+    delete myOverflowBin;
 }

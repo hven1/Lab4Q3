@@ -12,16 +12,25 @@
 #include "ProcessingRobot2nd.h"
 
 //---------------------------------------------------------------
-//Initialises the Processing Robot
-void ProcessingRobot2nd::Init(Conveyor* WhichConveyor, LoadingRobot* WhichLoadingRobot)
+//Initialises Conveyor
+ProcessingRobot2nd::ProcessingRobot2nd(Conveyor* WhichConveyor)
 {
-    _Conveyor = WhichConveyor;
-    _LoadingRobot = WhichLoadingRobot;
+  _Conveyor = WhichConveyor;
 
-    _MaxNumItemsProcessedArm2 = 1;
-    _TotalNumItemsProcessedArm2 = 0;
-    _NumProcessingIterationsArm2 = 1;
-    _RunAverageNumItemsProcessedArm2 = 0;
+  _MaxNumItemsProcessedArm2 = 1;
+  _TotalNumItemsProcessedArm2 = 0;
+  _NumProcessingIterationsArm2 = 1;
+  _RunAverageNumItemsProcessedArm2 = 0;
+
+  std::cout << "[ProcessingRobot 2 CTor] " << std::endl;
+}
+
+//---------------------------------------------------------------
+//Destruct Conveyor
+ProcessingRobot2nd::~ProcessingRobot2nd()
+{
+  std::cout << "[ProcessingRobot 2 DTor] " << std::endl;
+
 }
 
 //---------------------------------------------------------------

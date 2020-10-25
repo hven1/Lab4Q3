@@ -14,19 +14,21 @@
 class Conveyor
 {
     public:
-        void Init();
-        void AddItems( int n );
-        void RemoveItems( int n );
-        void Report();
+      Conveyor();
+      ~Conveyor();
 
-        int GetNumOfItemsOnConveyor( )
-        {
-          return _NumItemsOnConveyor;
-        }
+      void AddItems( int n );
+      void RemoveItems( int n );
+      void Report();
+
+      int GetNumOfItemsOnConveyor( )
+      {
+        return _NumItemsOnConveyor;
+      }
 
     private:
-        int _NumItemsOnConveyor;
-        int _MaxNumItemsOnConveyor;
+      int _NumItemsOnConveyor;
+      int _MaxNumItemsOnConveyor;
 };
 
 

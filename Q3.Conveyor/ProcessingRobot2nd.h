@@ -16,19 +16,18 @@
 class ProcessingRobot2nd
 {
     public:
-        void Init(Conveyor* WhichConveyor, LoadingRobot* WhichLoadingRobot);
-        void ProcessItems();
-        void Report();
+      ProcessingRobot2nd(Conveyor* WhichConveyor);
+      ~ProcessingRobot2nd();
+      void ProcessItems();
+      void Report();
 
     private:
-        Conveyor* _Conveyor;
-        LoadingRobot* _LoadingRobot;
-
-        double _MaxNumItemsProcessedArm2;
-        double _CurrentNumItemsProcessedArm2;
-        double _TotalNumItemsProcessedArm2;
-        double _RunAverageNumItemsProcessedArm2;
-        double _NumProcessingIterationsArm2;
+      Conveyor* _Conveyor;
+      double _MaxNumItemsProcessedArm2;
+      double _CurrentNumItemsProcessedArm2;
+      double _TotalNumItemsProcessedArm2;
+      double _RunAverageNumItemsProcessedArm2;
+      double _NumProcessingIterationsArm2;
 };
 
 #endif

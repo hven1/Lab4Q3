@@ -6,16 +6,25 @@
 
 
 #include <stdlib.h>
+#include <iostream>
+#include <algorithm>
 
 #include "LoadingRobot.h"
 #include "Conveyor.h"
 
+//---------------------------------------------------------------
+//Initialises Conveyor
+LoadingRobot::LoadingRobot(Conveyor* WhichConveyor)
+{
+  _Conveyor = WhichConveyor;
+  std::cout << "[LoadingRobot CTor] " << std::endl;
+}
 
 //---------------------------------------------------------------
-//Initialises the loading robot
-void LoadingRobot::Init( Conveyor* WhichConveyor )
+//Destruct Conveyor
+LoadingRobot::~LoadingRobot()
 {
-    _Conveyor = WhichConveyor;
+  std::cout << "[LoadingRobot DTor] " << std::endl;
 }
 
 //---------------------------------------------------------------
