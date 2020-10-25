@@ -48,7 +48,8 @@ void OverflowBin::OverflowItemAddRemove()
 
   }
 
-  //Add items if their is enough spacew on the conveyor and items available in the bin
+  //Add items if their is enough spacew on the conveyor and items
+  //available in the bin
   else if( (CurrentNumItemsOnConveyor < 10) && (_NumInOflowBin>0) ) {
     _Conveyor->AddItems( _OverflowAddRemoveRate);
     _NumInOflowBin = _NumInOflowBin - _OverflowAddRemoveRate;
@@ -68,5 +69,6 @@ void OverflowBin::OverflowItemAddRemove()
 void OverflowBin::Report()
 {
     std::cout << "Items in OverflowBin: " << _NumInOflowBin << std::endl;
-    std::cout << "Recorded max items in OverflowBin: " << _RecMaxOflowBin << "\n" << std::endl;
+    std::cout << "Recorded max items in OverflowBin: " << _RecMaxOflowBin
+      << "\n" << std::endl;
 }

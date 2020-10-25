@@ -65,6 +65,7 @@ void ProcessingRobot2nd::Report()
 
     //Report utilisation stats
     _AvgProssArm2 = (_TotProssArm2/_ProssItersArm2*100)/_MaxProssArm2;
-    std::cout << "Average utilisation of processing robot Arm 2: " << std::setprecision(4)<< _AvgProssArm2 << "%" << std::endl;
+    std::cout << "Average utilisation of processing robot Arm 2: "
+      << std::setprecision(4)<< _AvgProssArm2 << "%" << std::endl;
     _ProssItersArm2++;
 }

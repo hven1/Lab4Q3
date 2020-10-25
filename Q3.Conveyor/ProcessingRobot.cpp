@@ -63,10 +63,12 @@ void ProcessingRobot::Report()
 {
     //Calculate and report stats for reporting: Arm 1
     _TotProssArm1 += _CurProssArm1;
-    std::cout << "Total items processed Arm 1: " << std::setprecision(4) << _TotProssArm1 << std::endl;
+    std::cout << "Total items processed Arm 1: " << std::setprecision(4)
+      << _TotProssArm1 << std::endl;
 
     //Report utilisation stats
     _AvgProssArm1 = (_TotProssArm1/_ProssItersArm1*100)/_MaxProssArm1;
-    std::cout << "Average utilisation of processing robot Arm 1: " << std::setprecision(3) << _AvgProssArm1 <<"%" << std::endl;
+    std::cout << "Average utilisation of processing robot Arm 1: "
+      << std::setprecision(3) << _AvgProssArm1 <<"%" << std::endl;
     _ProssItersArm1++;
 }
