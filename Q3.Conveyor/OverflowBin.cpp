@@ -21,7 +21,6 @@ OverflowBin::OverflowBin(Conveyor* WhichConveyor)
 {
   _Conveyor = WhichConveyor;
 
-  _OverflowAddRemoveRate = 1;
   _NumItemsOverflowBin = 0;
   _RecordedMaxOverflowBin = 0;
 

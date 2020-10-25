@@ -18,7 +18,6 @@ ProcessingRobot::ProcessingRobot(Conveyor* WhichConveyor)
 {
   _Conveyor = WhichConveyor;
 
-  _MaxNumItemsProcessedArm1 = 5;
   _TotalNumItemsProcessedArm1 = 0;
   _NumProcessingIterationsArm1 = 1;
   _RunAverageNumItemsProcessedArm1 = 0;

@@ -4,7 +4,7 @@
 // Initial revision: Donald G Dansereau, 2019
 // Completed by: Hendrik Venter
 
-#ifndef _CONVEYOR_H
+#ifndef _LOADINGROBOT_H
 #define _LOADINGROBOT_H
 
 #include "Conveyor.h"
@@ -18,11 +18,11 @@
 class LoadingRobot
 {
     public:
-      LoadingRobot( Conveyor* WhichConveyor);
+      LoadingRobot(Conveyor* WhichConveyor);
       ~LoadingRobot();
       void AddItems();
     private:
         Conveyor* _Conveyor;
 };
 
-#endif //_CONVEYOR_H
+#endif //_LOADINGROBOT_H

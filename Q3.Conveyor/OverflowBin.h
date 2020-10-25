@@ -22,7 +22,7 @@ class OverflowBin
       void Report();
     private:
       Conveyor* _Conveyor;
-      int _OverflowAddRemoveRate;
+      const int _OverflowAddRemoveRate = 1;
       int _NumItemsOverflowBin;
       int _RecordedMaxOverflowBin;
 };

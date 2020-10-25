@@ -23,7 +23,7 @@ class ProcessingRobot2nd
 
     private:
       Conveyor* _Conveyor;
-      double _MaxNumItemsProcessedArm2;
+      const double _MaxNumItemsProcessedArm2 = 1;
       double _CurrentNumItemsProcessedArm2;
       double _TotalNumItemsProcessedArm2;
       double _RunAverageNumItemsProcessedArm2;

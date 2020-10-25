@@ -26,7 +26,7 @@ class Conveyor
 
     private:
       int _NumItemsOnConveyor;
-      int _MaxNumItemsOnConveyor;
+      const int _MaxNumItemsOnConveyor =75;
 };
 
 #endif //_CONVEYOR_H

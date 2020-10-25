@@ -17,7 +17,6 @@
 ProcessingRobot2nd::ProcessingRobot2nd(Conveyor* WhichConveyor)
 {
   _Conveyor = WhichConveyor;
-  _MaxNumItemsProcessedArm2 = 1;
   _TotalNumItemsProcessedArm2 = 0;
   _NumProcessingIterationsArm2 = 1;
   _RunAverageNumItemsProcessedArm2 = 0;

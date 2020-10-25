@@ -11,7 +11,7 @@
 
 //---------------------------------------------------------------
 //Initialises Conveyor
-Conveyor::Conveyor(): _NumItemsOnConveyor(0), _MaxNumItemsOnConveyor(75)
+Conveyor::Conveyor(): _NumItemsOnConveyor(0)
 {
   std::cout << "[Conveyor CTor] " << std::endl;
 }
