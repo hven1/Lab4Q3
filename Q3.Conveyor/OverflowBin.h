@@ -16,11 +16,13 @@
 class OverflowBin
 {
     public:
-        void Init( Conveyor* WhichConveyor );
-        void OverflowItemAddRemove(int _CurrentNumItemsOnConveyor);
+        void Init(Conveyor* WhichConveyor, LoadingRobot* WhichLoadingRobot);
+        void OverflowItemAddRemove();
         void Report();
     private:
         Conveyor* _Conveyor;
+        LoadingRobot* _LoadingRobot;
+
         int _OverflowAddRemoveRate;
         int _NumItemsOverflowBin;
         int _RecordedMaxOverflowBin;

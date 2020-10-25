@@ -11,37 +11,39 @@
 #include "Conveyor.h"
 #include "LoadingRobot.h"
 #include "ProcessingRobot.h"
+#include "ProcessingRobot2nd.h"
 #include "OverflowBin.h"
 
 
 int main()
 {
+    //std::shared_ptr<Speaker>(new EnglishSpeaker())
     Conveyor myConveyor;
     LoadingRobot myLoader;
     ProcessingRobot myProcessor;
+    ProcessingRobot2nd myProcessor2nd;
     OverflowBin myOverflowBin;
 
     myConveyor.Init();
     myLoader.Init( &myConveyor );
-    myProcessor.Init( &myConveyor );
-    myOverflowBin.Init( &myConveyor );
+    myProcessor.Init(&myConveyor, &myLoader);
+    myProcessor2nd.Init(&myConveyor, &myLoader);
+    myOverflowBin.Init(&myConveyor, &myLoader);
 
-   while( 1 )
+   while(1)
     {
         myLoader.AddItems();
         myConveyor.Report();
 
-        int _CurrentNumItemsOnConveyor = myConveyor.GetNumOfItemsOnConveyor();
-        myProcessor.ProcessItemsArm1(_CurrentNumItemsOnConveyor);
+        myProcessor.ProcessItems( );
         myConveyor.Report();
-        myProcessor.Report(_CurrentNumItemsOnConveyor, 1);
+        myProcessor.Report( );
 
-        _CurrentNumItemsOnConveyor = myConveyor.GetNumOfItemsOnConveyor();
-        myProcessor.ProcessItemsArm2(_CurrentNumItemsOnConveyor);
+        myProcessor2nd.ProcessItems();
         myConveyor.Report();
-        myProcessor.Report(_CurrentNumItemsOnConveyor, 2);
+        myProcessor2nd.Report();
 
-        myOverflowBin.OverflowItemAddRemove(_CurrentNumItemsOnConveyor);
+        myOverflowBin.OverflowItemAddRemove();
         myOverflowBin.Report();
     }
 }

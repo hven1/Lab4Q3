@@ -18,9 +18,11 @@
 
 //---------------------------------------------------------------
 //Initialise the overflow bin
-void OverflowBin::Init( Conveyor* WhichConveyor )
+void OverflowBin::Init(Conveyor* WhichConveyor, LoadingRobot* WhichLoadingRobot)
 {
     _Conveyor = WhichConveyor;
+    _LoadingRobot = WhichLoadingRobot;
+
     _OverflowAddRemoveRate = 1;
     _NumItemsOverflowBin = 0;
     _RecordedMaxOverflowBin = 0;
@@ -28,10 +30,12 @@ void OverflowBin::Init( Conveyor* WhichConveyor )
 
 //---------------------------------------------------------------
 //This overflowbin function adds or removes items from the conveyor
-void OverflowBin::OverflowItemAddRemove(int _CurrentNumItemsOnConveyor)
+void OverflowBin::OverflowItemAddRemove()
 {
+  int CurrentNumItemsOnConveyor = _Conveyor->GetNumOfItemsOnConveyor();
+
   //Remove itsms if the conveyor is overloaded
-  if ( _CurrentNumItemsOnConveyor > 50 )
+  if ( CurrentNumItemsOnConveyor > 50 )
   {
     _Conveyor->RemoveItems( _OverflowAddRemoveRate);
     _NumItemsOverflowBin = _NumItemsOverflowBin + _OverflowAddRemoveRate;
@@ -39,7 +43,7 @@ void OverflowBin::OverflowItemAddRemove(int _CurrentNumItemsOnConveyor)
   }
 
   //Add items if their is enough spacew on the conveyor and items available in the bin
-  else if( (_CurrentNumItemsOnConveyor < 10) && (_NumItemsOverflowBin>0) ) {
+  else if( (CurrentNumItemsOnConveyor < 10) && (_NumItemsOverflowBin>0) ) {
     _Conveyor->AddItems( _OverflowAddRemoveRate);
     _NumItemsOverflowBin = _NumItemsOverflowBin - _OverflowAddRemoveRate;
 
