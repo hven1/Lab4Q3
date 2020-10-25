@@ -59,6 +59,7 @@ void ProcessingRobot::ProcessItems()
 }
 
 //---------------------------------------------------------------
+//Reporting function for the first processing arm
 void ProcessingRobot::Report()
 {
     //Calculate and report stats for reporting: Arm 1
