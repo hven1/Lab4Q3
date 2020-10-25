@@ -43,7 +43,7 @@ void OverflowBin::OverflowItemAddRemove()
   //Remove itsms if the conveyor is overloaded
   if ( CurrNumOnConv > 50 )
   {
-    _Conveyor->RemoveItems( _OverflowAddRemoveRate);
+    _Conveyor->RemoveItems(_OverflowAddRemoveRate);
     _NumInOflowBin = _NumInOflowBin + _OverflowAddRemoveRate;
 
   }
@@ -51,7 +51,7 @@ void OverflowBin::OverflowItemAddRemove()
   //Add items if their is enough spacew on the conveyor and items
   //available in the bin
   else if( (CurrNumOnConv < 10) && (_NumInOflowBin>0) ) {
-    _Conveyor->AddItems( _OverflowAddRemoveRate);
+    _Conveyor->AddItems(_OverflowAddRemoveRate);
     _NumInOflowBin = _NumInOflowBin - _OverflowAddRemoveRate;
 
   }

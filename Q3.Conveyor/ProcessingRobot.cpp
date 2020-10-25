@@ -42,7 +42,7 @@ void ProcessingRobot::ProcessItems()
   if(CurrNumOnConv > 0)
   {
     //Calculate current number of items processed
-    if( CurrNumOnConv>=_MaxProssArm1 )
+    if(CurrNumOnConv>=_MaxProssArm1 )
     {
       _CurProssArm1= _MaxProssArm1;
     }
@@ -51,7 +51,7 @@ void ProcessingRobot::ProcessItems()
     }
 
     //Process Items
-    _Conveyor->RemoveItems( _MaxProssArm1 );
+    _Conveyor->RemoveItems(_MaxProssArm1 );
 
     //Report on items just processed
     std::cout << "Items processed Arm 1: " << _CurProssArm1 << std::endl;

@@ -40,7 +40,7 @@ void ProcessingRobot2nd::ProcessItems( )
   if(CurrNumOnConv > 0)
   {
     //Calculate current number of items processed
-    if( CurrNumOnConv >= _MaxProssArm2 )
+    if(CurrNumOnConv >= _MaxProssArm2)
     {
       _CurProssArm2 = _MaxProssArm2;
     }

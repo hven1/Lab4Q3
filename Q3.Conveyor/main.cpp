@@ -18,6 +18,7 @@
 
 int main()
 {
+  //Use current time as seed for rand()
   std::srand(time(0));
 
   //Construct all items required for program
